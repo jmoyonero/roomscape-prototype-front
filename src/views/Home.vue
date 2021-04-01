@@ -105,7 +105,7 @@ export default {
     onSubmit(event) {
       event.preventDefault()
       axios
-          .post('http://localhost:8080/add', this.currentVideoGame,)
+          .post(process.env.VUE_APP_BACKEND + '/add', this.currentVideoGame,)
           .then(response => {
             this.showSuccessModal(response.data)
             this.refreshTable()
@@ -128,7 +128,7 @@ export default {
     },
     refreshTable() {
       axios
-          .get('http://localhost:8080/list')
+          .get(process.env.VUE_APP_BACKEND + '/list')
           .then(response => {
             this.videoGames = response.data
           })
