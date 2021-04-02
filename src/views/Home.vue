@@ -37,8 +37,8 @@
           ></b-form-textarea>
         </b-form-group>
 
-        <div class="d-flex justify-content-between">
-          <b-button type="submit" variant="primary">Guardar</b-button>
+        <div id="buttons" class="d-flex justify-content-between">
+          <b-button id="save" type="submit" variant="primary">Guardar</b-button>
           <b-button type="reset" variant="danger">Limpiar</b-button>
         </div>
 
@@ -74,6 +74,8 @@
 import axios from "axios";
 import ModalMessage from "@/components/ModalMessage";
 
+export const BACKEND_URL = process.env.VUE_APP_BACKEND_URL;
+
 export default {
   name: 'Home',
   components: {ModalMessage},
@@ -93,7 +95,7 @@ export default {
         {key: 'description', label: 'Descripción', sortable: true},
       ],
       modal: {
-        timeToShow: 120,
+        timeToShow: 0,
         title: '',
         message: '',
         variant: '',
@@ -105,7 +107,7 @@ export default {
     onSubmit(event) {
       event.preventDefault()
       axios
-          .post(process.env.VUE_APP_BACKEND + '/add', this.currentVideoGame,)
+          .post(BACKEND_URL + '/add', this.currentVideoGame,)
           .then(response => {
             this.showSuccessModal(response.data)
             this.refreshTable()
@@ -128,7 +130,7 @@ export default {
     },
     refreshTable() {
       axios
-          .get(process.env.VUE_APP_BACKEND + '/list')
+          .get(BACKEND_URL + '/list')
           .then(response => {
             this.videoGames = response.data
           })
@@ -170,6 +172,27 @@ export default {
   padding-top: 100px;
 }
 
+@media only screen and (max-width: 768px) {
+  .view_container {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    width: 50%;
+  }
+
+  .table_video_games {
+    padding-top: 10px;
+  }
+}
+
 .table_video_games {
   max-height: 600px;
 }
@@ -188,6 +211,7 @@ export default {
   font-size: 35px;
   font-family: 'Dela Gothic One', cursive;
 }
+
 
 select {
   text-align-last: center;

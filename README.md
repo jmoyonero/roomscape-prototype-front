@@ -1,24 +1,37 @@
-# prototype
+# RoomScape Prototipo (Front End)
 
-## Project setup
+![Arquitectura del proyecto RoomScape](./public/RoomScapeArquitectura1.0.0.png)
+
+Este proyecto es el Front-End del prototipo tecnológico a presentar para la asignatura de Gestión de Proyecto Software. Está desarrollado en Vue.js integrado con Bootstrap.
+
+## Configuración del proyecto
+
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Comando para compilar y ejecutar la app en desarrollo
+
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Comando para compilar la app de producción
+
 ```
 npm run build
 ```
 
-### Lints and fixes files
+### Comando para ejecutar linters
+
 ```
 npm run lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## Referencias
+
+RoomScape Back End (Prototipo tecnológico): https://github.com/jmoyonero/roomscape-prototype-back
+
+Vue.js: https://vuejs.org/
+
+BootstrapVue: https://bootstrap-vue.org/
