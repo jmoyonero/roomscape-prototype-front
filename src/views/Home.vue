@@ -172,6 +172,15 @@ export default {
   padding-top: 100px;
 }
 
+.table_video_games {
+  margin: 0px 20px 20px 0px;
+}
+
+.form_new_video_game {
+  min-width: 300px;
+  margin: 20px;
+}
+
 @media only screen and (max-width: 768px) {
   .view_container {
     padding-top: 10px;
@@ -190,6 +199,7 @@ export default {
 
   .table_video_games {
     padding-top: 10px;
+    margin: 0px 0px 0px 0px;
   }
 }
 
