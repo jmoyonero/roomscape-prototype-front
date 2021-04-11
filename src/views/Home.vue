@@ -16,7 +16,7 @@
           ></b-form-input>
         </b-form-group>
 
-        <b-form-group id="input-group-2" label="Consola" label-for="select">
+        <b-form-group id="input-group-2" label="Consola:" label-for="select">
           <div>
             <b-form-select
                 id="select"
@@ -27,7 +27,7 @@
           </div>
         </b-form-group>
 
-        <b-form-group id="input-group-2" label="Descripción" label-for="textarea">
+        <b-form-group id="input-group-3" label="Descripción:" label-for="textarea">
           <b-form-textarea
               id="textarea"
               v-model="currentVideoGame.description"
@@ -45,6 +45,7 @@
       </b-form>
       <div class="table_video_games">
         <b-table
+            id="table_video_games"
             striped
             sticky-header
             sticky="100%"
@@ -91,7 +92,7 @@ export default {
       fields: [
         {key: 'id', label: 'ID', sortable: true},
         {key: 'name', label: 'Nombre', sortable: true},
-        {key: 'console', label: 'Console', sortable: true},
+        {key: 'console', label: 'Consola', sortable: true},
         {key: 'description', label: 'Descripción', sortable: true},
       ],
       modal: {
